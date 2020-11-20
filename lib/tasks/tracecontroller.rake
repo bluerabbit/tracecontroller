@@ -6,7 +6,7 @@ task tracecontroller: :environment do
   tracecontroller.errors[:callback].each do |error|
     puts "#{error[:controller_name]} Missing callbacks."
 
-    error[:callback].each do |callback|
+    error[:callbacks].each do |callback|
       puts "  #{callback[:kind]}_action: #{callback[:filter]}"
     end
   end
