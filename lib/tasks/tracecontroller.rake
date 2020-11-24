@@ -15,7 +15,7 @@ task tracecontroller: :environment do
     puts "#{name} Missing superclass."
   end
 
-  if ENV['FAIL_ON_ERROR'] && tracecontroller.valid?
+  if ENV['FAIL_ON_ERROR'] && !tracecontroller.valid?
     raise 'Missing callbacks or superclass detected.'
   end
 end
