@@ -75,7 +75,7 @@ class Tracecontroller
       next if array.any? {|c| c[:controller_name] == controller_name }
 
       begin
-        controller = ActiveSupport::Dependencies.constantize(controller_name)
+        controller = controller_name.constantize
       rescue NameError => e
         puts "#{e.message} path:#{route.path.spec}"
         next
